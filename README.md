@@ -1,5 +1,24 @@
 # PMLDL
+## Papers
 
+1. [Person-MinkUNet: 3D Person Detection with LiDAR Point Cloud](https://arxiv.org/pdf/2107.06780)
+   1. [Person-MinkUNet](https://github.com/VisualComputingInstitute/Person_MinkUNet?tab=readme-ov-file)
+2. [VoxelNet: End-to-End Learning for Point Cloud Based 3D Object Detection](https://arxiv.org/pdf/1711.06396)
+   1. [Voxel Net tensorflow](https://github.com/tsinghua-rll/VoxelNet-tensorflow?tab=readme-ov-file)
+   2. [Voxel net Pytorch](https://github.com/skyhehe123/VoxelNet-pytorch?tab=readme-ov-file)
+3. [3D Fully Convolutional Network for Vehicle Detection in Point Cloud](https://arxiv.org/pdf/1611.08069)
+   1. [KiTTI Data Processing and 3D CNN for Vehicle Detection TF](https://github.com/yukitsuji/3D_CNN_tensorflow?tab=readme-ov-file)
+4. [Online Learning for Human Classification in 3D LiDAR-based Tracking](https://sci-hub.sidesgame.com/10.1109/IROS.2017.8202247)
+   1. [hdl_people_tracking is a ROS package for real-time people tracking using a 3D LIDAR](https://github.com/koide3/hdl_people_tracking?tab=readme-ov-file)
+   2. [Online learning for human classification in 3D LiDAR-based tracking](https://github.com/LCAS/online_learning/tree/master): This is a ROS-based online learning framework for human classification in 3D LiDAR scans, taking advantage of robust multi-target tracking to avoid the need for data annotation by a human expert. Please watch the videos below for more details.
+   3. [L-CAS 3D Point Cloud People Dataset](https://lcas.lincoln.ac.uk/wp/research/data-sets-software/l-cas-3d-point-cloud-people-dataset/)
+5. [PointPillars: Fast Encoders for Object Detection from Point Clouds](https://paperswithcode.com/paper/pointpillars-fast-encoders-for-object)
+   1. [Implementation of PointPillars in PyTorch for KITTI 3D Object Detetcion](https://github.com/shangjie-li/pointpillars)
+   2. [Point Pillars (3D Object Detection) Through Explanation with Code](https://medium.com/@abdulhaq.ah/point-pillars-3d-object-detection-through-explanation-with-code-57763a3d5737)
+   3. [PointPillars](https://github.com/nutonomy/second.pytorch): This repo demonstrates how to reproduce the results from PointPillars: Fast Encoders for Object Detection from Point Clouds (to be published at CVPR 2019) on the KITTI dataset by making the minimum required changes from the preexisting open source codebase SECOND.
+   4. [MMDetection3D](https://github.com/open-mmlab/mmdetection3d) is an open source object detection toolbox based on PyTorch, towards the next-generation platform for general 3D detection.
+6. [Online learning for 3D LiDAR-based human detection: experimental
+analysis of point cloud clustering and classification methods](https://link.springer.com/epdf/10.1007/s10514-019-09883-y?author_access_token=bVLnE4rWjkyUnk8WopA0Lfe4RwlQNchNByi7wbcMAY6zHIY15ykgJsK70R8O7eQrMr2yHIZQSiyxe3OktHw_9R1puJtMefwAs4tGo2L7ytrEzPSDTxHtSdjXNYkRozK46fQM7ZPLOgSknycKxSoIsA%3D%3D)
 ## Datasets
 
 ### To-Do dataset
