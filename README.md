@@ -19,6 +19,43 @@
    4. [MMDetection3D](https://github.com/open-mmlab/mmdetection3d) is an open source object detection toolbox based on PyTorch, towards the next-generation platform for general 3D detection.
 6. [Online learning for 3D LiDAR-based human detection: experimental
 analysis of point cloud clustering and classification methods](https://link.springer.com/epdf/10.1007/s10514-019-09883-y?author_access_token=bVLnE4rWjkyUnk8WopA0Lfe4RwlQNchNByi7wbcMAY6zHIY15ykgJsK70R8O7eQrMr2yHIZQSiyxe3OktHw_9R1puJtMefwAs4tGo2L7ytrEzPSDTxHtSdjXNYkRozK46fQM7ZPLOgSknycKxSoIsA%3D%3D)
+
+7. [LiDAR-based Online 3D Video Object Detection with Graph-based Message Passing and Spatiotemporal Transformer Attention](https://openaccess.thecvf.com/content_CVPR_2020/papers/Yin_LiDAR-Based_Online_3D_Video_Object_Detection_With_Graph-Based_Message_Passing_CVPR_2020_paper.pdf)
+   1. Core Idea: This paper introduces an end-to-end 3D video object detector for LiDAR point clouds. The framework has two main components:
+      1. Pillar Message Passing Network (PMPNet): Encodes spatial features within each frame by constructing a graph, where each LiDAR point is treated as a node, allowing information sharing across neighboring points.
+      2. Attentive Spatiotemporal Transformer GRU (AST-GRU): Aggregates temporal information across frames using Transformer attention mechanisms to align and emphasize foreground objects, improving detection across sequences.
+   2. Dataset: Uses the nuScenes dataset, a large-scale dataset with continuous LiDAR point clouds for autonomous driving.
+   3. Input/Output: The input is sequential LiDAR point cloud frames, and the output is 3D bounding boxes with object classifications.
+   4. Relevance: Highly relevant, especially for tasks involving tracking. The AST-GRU’s spatiotemporal feature aggregation can help maintain consistent human tracking across frames.
+8. [Temporal-Channel Transformer for 3D Lidar-Based Video Object Detection in Autonomous Driving](https://arxiv.org/pdf/2011.13628)
+   1. Core Idea: This paper proposes the Temporal-Channel Transformer (TCTR), designed to process sequential LiDAR frames by encoding temporal information (frame-to-frame) and channel-wise information. The TCTR model has two main parts:
+      1. Temporal-Channel Encoder: Encodes temporal-channel information across frames, capturing dependencies between frame sequences and voxel channels.
+      2. Spatial Decoder: Decodes spatial relationships within each frame to produce a dense representation for the current frame, refined to highlight objects.
+   2. Dataset: Also uses nuScenes, ideal for evaluating video-based LiDAR detection performance.
+   3. Input/Output: Input is consecutive frames converted into 2D pseudo-images (voxels), and output is 3D object bounding boxes.
+   4. Relevance: Relevant for human detection and tracking in sparse data; however, TCTR is more focused on enhancing single-frame representations with past frames, which is less dynamic than PMPNet's graph-based message passing.
+9.  [SA-Det3D: Self-Attention Based Context-Aware 3D Object Detection](https://openaccess.thecvf.com/content/ICCV2021W/AVVision/papers/Bhattacharyya_SA-Det3D_Self-Attention_Based_Context-Aware_3D_Object_Detection_ICCVW_2021_paper.pdf):
+    1.  Core Idea: This paper introduces SA-Det3D, a self-attention module for 3D object detection, which integrates Full Self-Attention (FSA) and Deformable Self-Attention (DSA) to enhance the context-awareness of object detection models in point clouds. It aims to improve detection by allowing the network to capture long-range dependencies in the 3D space without increasing computational costs significantly.
+        1.  FSA computes interactions between all points for robust global context.
+        2.  DSA reduces computational demand by selectively attending to key points.
+    2.  Dataset: It utilizes several large-scale 3D datasets, including KITTI, nuScenes, and Waymo Open Dataset.
+    3.  Input/Output:
+        1.  Input: LiDAR point clouds, processed into pillars or voxels, with each frame as input.
+        2.  Output: 3D bounding boxes and classification labels for detected objects within each frame.
+    4.  Relevance to Your Project:
+        1.  This paper is relevant if your primary focus is detection, as the self-attention mechanism enhances the model’s ability to distinguish between humans and other objects by learning context across larger distances within a single frame.
+        2.  However, SA-Det3D lacks temporal tracking, which is essential for tracking and recognition across multiple frames. The self-attention improves frame-by-frame detection but does not utilize temporal information, limiting its effectiveness for continuous human tracking. 
+10. [Point Density-Aware Voxels for LiDAR 3D Object Detection](https://openaccess.thecvf.com/content/CVPR2022/papers/Hu_Point_Density-Aware_Voxels_for_LiDAR_3D_Object_Detection_CVPR_2022_paper.pdf):
+    1.  Core Idea: This paper presents Point Density-Aware Voxel Network (PDV), designed to address LiDAR's uneven point density at varying distances. PDV leverages density-aware Region of Interest (RoI) pooling and uses kernel density estimation (KDE) and self-attention to incorporate point density information directly into the detection process. PDV enhances voxel feature localization by calculating voxel centroids for greater spatial accuracy and aggregates point features to better capture object shapes.
+        1.   Voxel Point Centroid Localization: Calculates centroids of points in each voxel for more accurate localization.
+        2.   Density-Aware RoI Pooling: Uses KDE to capture local density around each grid point, adding density-based positional encoding in the self-attention module.
+    2.  Dataset: Evaluated on large-scale autonomous driving datasets, including the Waymo Open Dataset and KITTI.
+    3.  Input/Output:
+        1.  Input: LiDAR point cloud data with point coordinates and features (e.g., intensity).
+        2.  Output: 3D bounding boxes and object classifications, refined based on density awareness.
+    4.  Relevance to Your Project:
+        1.  Detection Accuracy: PDV's density-aware design improves detection accuracy in varying densities, which can be useful for human detection, especially in crowded scenes or at greater distances where point density may be lower.
+        2.  Tracking Limitations: This model focuses on refining object detection using density-based features in single frames. Unlike multi-frame methods, it doesn’t integrate temporal information, which limits its capability for continuous human tracking.
 ## Datasets
 
 ### To-Do dataset
